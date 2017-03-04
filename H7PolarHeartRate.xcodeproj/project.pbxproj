@@ -1,0 +1,324 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B2BA6D981E6AAE8600447165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA6D971E6AAE8600447165 /* AppDelegate.swift */; };
+		B2BA6D9A1E6AAE8600447165 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA6D991E6AAE8600447165 /* ViewController.swift */; };
+		B2BA6D9D1E6AAE8600447165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2BA6D9B1E6AAE8600447165 /* Main.storyboard */; };
+		B2BA6DA01E6AAE8600447165 /* H7PolarHeartRate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2BA6D9E1E6AAE8600447165 /* H7PolarHeartRate.xcdatamodeld */; };
+		B2BA6DA21E6AAE8600447165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2BA6DA11E6AAE8600447165 /* Assets.xcassets */; };
+		B2BA6DA51E6AAE8600447165 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2BA6DA31E6AAE8600447165 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B2BA6D941E6AAE8600447165 /* H7PolarHeartRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = H7PolarHeartRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2BA6D971E6AAE8600447165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B2BA6D991E6AAE8600447165 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B2BA6D9C1E6AAE8600447165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B2BA6D9F1E6AAE8600447165 /* H7PolarHeartRate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = H7PolarHeartRate.xcdatamodel; sourceTree = "<group>"; };
+		B2BA6DA11E6AAE8600447165 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B2BA6DA41E6AAE8600447165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B2BA6DA61E6AAE8600447165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B2BA6D911E6AAE8500447165 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B2BA6D8B1E6AAE8500447165 = {
+			isa = PBXGroup;
+			children = (
+				B2BA6D961E6AAE8600447165 /* H7PolarHeartRate */,
+				B2BA6D951E6AAE8600447165 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B2BA6D951E6AAE8600447165 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2BA6D941E6AAE8600447165 /* H7PolarHeartRate.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2BA6D961E6AAE8600447165 /* H7PolarHeartRate */ = {
+			isa = PBXGroup;
+			children = (
+				B2BA6D971E6AAE8600447165 /* AppDelegate.swift */,
+				B2BA6D991E6AAE8600447165 /* ViewController.swift */,
+				B2BA6D9B1E6AAE8600447165 /* Main.storyboard */,
+				B2BA6DA11E6AAE8600447165 /* Assets.xcassets */,
+				B2BA6DA31E6AAE8600447165 /* LaunchScreen.storyboard */,
+				B2BA6DA61E6AAE8600447165 /* Info.plist */,
+				B2BA6D9E1E6AAE8600447165 /* H7PolarHeartRate.xcdatamodeld */,
+			);
+			path = H7PolarHeartRate;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B2BA6D931E6AAE8500447165 /* H7PolarHeartRate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2BA6DA91E6AAE8600447165 /* Build configuration list for PBXNativeTarget "H7PolarHeartRate" */;
+			buildPhases = (
+				B2BA6D901E6AAE8500447165 /* Sources */,
+				B2BA6D911E6AAE8500447165 /* Frameworks */,
+				B2BA6D921E6AAE8500447165 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = H7PolarHeartRate;
+			productName = H7PolarHeartRate;
+			productReference = B2BA6D941E6AAE8600447165 /* H7PolarHeartRate.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B2BA6D8C1E6AAE8500447165 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Mark Illingworth";
+				TargetAttributes = {
+					B2BA6D931E6AAE8500447165 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = XYYNYYQW56;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B2BA6D8F1E6AAE8500447165 /* Build configuration list for PBXProject "H7PolarHeartRate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B2BA6D8B1E6AAE8500447165;
+			productRefGroup = B2BA6D951E6AAE8600447165 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B2BA6D931E6AAE8500447165 /* H7PolarHeartRate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B2BA6D921E6AAE8500447165 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2BA6DA51E6AAE8600447165 /* LaunchScreen.storyboard in Resources */,
+				B2BA6DA21E6AAE8600447165 /* Assets.xcassets in Resources */,
+				B2BA6D9D1E6AAE8600447165 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B2BA6D901E6AAE8500447165 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2BA6DA01E6AAE8600447165 /* H7PolarHeartRate.xcdatamodeld in Sources */,
+				B2BA6D9A1E6AAE8600447165 /* ViewController.swift in Sources */,
+				B2BA6D981E6AAE8600447165 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B2BA6D9B1E6AAE8600447165 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2BA6D9C1E6AAE8600447165 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B2BA6DA31E6AAE8600447165 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2BA6DA41E6AAE8600447165 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B2BA6DA71E6AAE8600447165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B2BA6DA81E6AAE8600447165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B2BA6DAA1E6AAE8600447165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XYYNYYQW56;
+				INFOPLIST_FILE = H7PolarHeartRate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.msillingworth.H7PolarHeartRate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B2BA6DAB1E6AAE8600447165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XYYNYYQW56;
+				INFOPLIST_FILE = H7PolarHeartRate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.msillingworth.H7PolarHeartRate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2BA6D8F1E6AAE8500447165 /* Build configuration list for PBXProject "H7PolarHeartRate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2BA6DA71E6AAE8600447165 /* Debug */,
+				B2BA6DA81E6AAE8600447165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2BA6DA91E6AAE8600447165 /* Build configuration list for PBXNativeTarget "H7PolarHeartRate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2BA6DAA1E6AAE8600447165 /* Debug */,
+				B2BA6DAB1E6AAE8600447165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B2BA6D9E1E6AAE8600447165 /* H7PolarHeartRate.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B2BA6D9F1E6AAE8600447165 /* H7PolarHeartRate.xcdatamodel */,
+			);
+			currentVersion = B2BA6D9F1E6AAE8600447165 /* H7PolarHeartRate.xcdatamodel */;
+			path = H7PolarHeartRate.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B2BA6D8C1E6AAE8500447165 /* Project object */;
+}
