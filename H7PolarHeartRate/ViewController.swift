@@ -229,16 +229,12 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     // Invoked when you retrieve a specified characteristic's value, or when the peripheral device notifies your app that the characteristic's value has changed.
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        NSLog("Called didupdatevaluefor")
-        var count:Data
         
-        if characteristic.uuid == POLARH7_HRM_MEASUREMENT_CHARACTERISTIC_UUID  {
-            count = characteristic.value!
-            heartRateBPM.text = NSString(format: "%llu", count as CVarArg) as String
-        } else if characteristic.uuid == POLARH7_HRM_BODY_LOCATION_CHARACTERISTIC_UUID {
-            count = characteristic.value!
-            bodyDataLabel.text = NSString(format: "%", count as CVarArg) as String
+        if characteristic.uuid == POLARH7_HRM_MANUFACTURER_NAME_CHARACTERISTIC_UUID {
+            let name = getManufacturerName(characteristic, error: nil) as String
+            manufacturer = name
         }
+
     }
     
     // MARK:- CBCharacteristic helpers
