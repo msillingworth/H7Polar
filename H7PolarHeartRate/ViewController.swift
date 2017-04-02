@@ -49,7 +49,6 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     var manufacturer: NSString!
     var polarH7DeviceData: NSString!
     var heartRate: __uint16_t!
-  
     var bodyDataLabel: UILabel!
     
     // APP launch Screen
@@ -104,16 +103,16 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         deviceInfo.frame = CGRect(x: self.view.frame.origin.x, y: self.deviceInfo.frame.maxY, width: self.view.frame.width, height: self.deviceInfo.bounds.height)
         self.view.addSubview(deviceInfo)
         
-        // Scan for all available Bluetooth LE devices
-        func scanBLEDevice(){
-            let services: NSArray! = [[POLARH7_HRM_DEVICE_INFO_SERVICE_UUID],[POLARH7_HRM_HEART_RATE_SERVICE_UUID]]
-            centralManager?.scanForPeripherals(withServices: services as! [CBUUID]?, options: nil)
-            // If the main queue has not found the services in 60 seconds stop scanning for devices
-            DispatchQueue.main.asyncAfter(deadline: .now() + 60.0) {
-            self.centralManager.stopScan()
-            NSLog("Scanning took longer than 60 seconds")
-            }
-        }
+//        // Scan for all available Bluetooth LE devices
+//        func scanBLEDevice(){
+//            let services: NSArray! = [[POLARH7_HRM_DEVICE_INFO_SERVICE_UUID],[POLARH7_HRM_HEART_RATE_SERVICE_UUID]]
+//            centralManager?.scanForPeripherals(withServices: services as! [CBUUID]?, options: nil)
+//            // If the main queue has not found the services in 60 seconds stop scanning for devices
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 60.0) {
+//            self.centralManager.stopScan()
+//            NSLog("Scanning took longer than 60 seconds")
+//            }
+//        }
     }
 
 
@@ -124,31 +123,11 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
 
     // MARK: - CBCentralManagerDelegate
     
-    // Method called whenever you have successfully connected to the BLE peripheral
-    
-    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-        self.statusLabel.text = "# 1 Did connect to peripheral services"
-        polarH7Peripheral.discoverServices(nil)
-    }
-    
-    // CBCentralManagerDelegate - This is called with the CBPeripheral class as its main input parameter. This contains most of the information there is to know about a BLE peripheral.
-    
-    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        
-        let device = (advertisementData as NSDictionary).object(forKey: CBAdvertisementDataLocalNameKey) as? NSString
-        
-        if device?.contains(deviceName) == true {
-            self.centralManager.stopScan()
-            self.polarH7Peripheral = peripheral
-            self.polarH7Peripheral.delegate = self
-            centralManager.connect(peripheral, options: nil)
-        }
-    }
     
     // Method called whenever the device state changes.
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-    
+        
         // Determine the state of the peripheral
         if (centralManager.state == .poweredOn) {
             NSLog("CoreBluetooth BLE hardware is powered on and ready")
@@ -171,10 +150,35 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         else if (centralManager.state == .unsupported) {
             NSLog("CoreBluetooth BLE hardware is unsupported on this platform")
             self.statusLabel.text = "CoreBluetooth BLE state is not supported on this platform"
-
+            
         }
         
     }
+    
+    // CBCentralManagerDelegate - This is called with the CBPeripheral class as its main input parameter. This contains most of the information there is to know about a BLE peripheral.
+    
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        
+        // let device = (advertisementData as NSDictionary).object(forKey: CBAdvertisementDataLocalNameKey) as? NSString
+        
+        if /* device?.contains(deviceName)== */true {
+            self.centralManager.stopScan()
+            self.polarH7Peripheral = peripheral
+            self.polarH7Peripheral.delegate = self
+            centralManager.connect(peripheral, options: nil)
+            NSLog("Central Manager connected to peripheral")
+        }
+    }
+    
+    
+    // Method called whenever you have successfully connected to the BLE peripheral
+    
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        self.statusLabel.text = "Called didConnect to peripheral"
+        polarH7Peripheral.discoverServices(nil)
+        NSLog("Called didConnect to peripheral")
+    }
+    
     
     // MARK: - CBPerhiperhalManagerDelegate
     // CBPeripheralDelegate - Invoked when you discover the peripheral's available services.
@@ -190,18 +194,23 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         
+        // Retrieve heart rate information from the device
         if service.uuid == POLARH7_HRM_HEART_RATE_SERVICE_UUID {
             for aChar in service.characteristics! {
-                // Request heart rate notification
                 if aChar.uuid == POLARH7_HRM_MEASUREMENT_CHARACTERISTIC_UUID {
                     self.polarH7Peripheral.setNotifyValue(true, for: aChar)
                     NSLog("Found heart rate measurement characteritic")
-                    // Request body sensor location
-                } else if aChar.uuid == POLARH7_HRM_BODY_LOCATION_CHARACTERISTIC_UUID {
-                    self.polarH7Peripheral.setNotifyValue(true, for: aChar)
-                        NSLog("Found Body Sensor Location Characteristic")
                 }
             }
+        }
+        // Retrieve peripheral location from the device
+            if service.uuid == POLARH7_HRM_HEART_RATE_SERVICE_UUID {
+                for aChar in service.characteristics! {
+                    if aChar.uuid == POLARH7_HRM_BODY_LOCATION_CHARACTERISTIC_UUID  {
+                        self.polarH7Peripheral.setNotifyValue(true, for: aChar)
+                        NSLog("Found body location characteritic")
+                    }
+                }
         }
         
         // Retrieve Device Information Services for the Manufactuers Name
@@ -212,7 +221,6 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
                     NSLog("Found a device manufacturer name characteristic")
                 }
             }
-                
         }
     }
 
@@ -221,7 +229,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     // Invoked when you retrieve a specified characteristic's value, or when the peripheral device notifies your app that the characteristic's value has changed.
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        
+        NSLog("Called didupdatevaluefor")
         var count:Data
         
         if characteristic.uuid == POLARH7_HRM_MEASUREMENT_CHARACTERISTIC_UUID  {
@@ -255,7 +263,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             self.heartRate = bpm;
             self.heartRateBPM.text = "\(bpm)"
             self.heartRateBPM.font = UIFont(name: "Futura-CondensedMedium", size:100)
-            self.doHeartBeat()
+            //self.doHeartBeat()
             //self.pulseTimer = [NSTimer scheduledTimerWithTimeInterval:(60. / self.heartRate) target:self selector:@selector(doHeartBeat) userInfo:nil repeats:NO];
         }
         return self.view.addSubview(heartRateBPM)
